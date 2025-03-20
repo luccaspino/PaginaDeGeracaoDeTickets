@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Conference Ticket Generator</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/images/ico.ico" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="pattern-bottom"></div>
+      <div class="pattern-top"></div>
+
+      <div class="logo"><img src="./assets/images/logo-full.svg" alt="" /></div>
+
+      <div class="conf-form">
+        <h1 class="form-title">
+          Your Journey to Coding Conf 2025 Starts Here!
+        </h1>
+
+        <p class="form-description">
+          Secure your spot at next year's biggest coding conference.
+        </p>
+
+        <div class="form-inputs">
+          <div class="avatar-upload">
+            <h2>Upload Avatar</h2>
+            <div class="upload-box">
+              <button class="upload-btn">
+                <img src="./assets/images/icon-upload.svg" alt="" />
+              </button>
+              <input
+                type="file"
+                name="file"
+                id="file"
+                accept="image/png, image/jpeg"
+              />
+              <p class="dragText">Drag and drop or click to upload</p>
+              <div class="avatar-btn">
+                <button class="remove-img avatar-button">Remove Image</button>
+                <button class="change-img avatar-button">Change Image</button>
+              </div>
+            </div>
+            <p>Upload your photo (JPG or PNG, max size: 500kb)</p>
+
+            <span class="upload-warn"
+              ><img src="./assets/images/icon-info.svg" alt="" />File too large,
+              please upload a photo under 500kb</span
+            >
+          </div>
+
+          <div class="info-inputs">
+            <div>
+              <h2>Full Name</h2>
+              <input autocomplete="off" type="text" name="name" id="name" />
+            </div>
+
+            <div>
+              <h2>Email Address</h2>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="example@gmail.com"
+                autocomplete="off"
+                required
+              />
+
+              <span class="email-warn">Please enter a valid email address</span>
+            </div>
+
+            <div>
+              <h2>GitHub Username</h2>
+              <input
+                autocomplete="off"
+                type="text"
+                name="username"
+                id="username"
+                placeholder="@yourusername"
+              />
+            </div>
+          </div>
+
+          <button class="submit-btn">Generate My Ticket</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-query-warning">
+      This app does not work on screens smaller than 330 pixels.
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
