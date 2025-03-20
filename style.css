@@ -6,11 +6,9 @@
   --light-bluish: hsl(245, 15%, 58%);
   --mid-bluish: hsl(245, 19%, 35%);
   --dark-bluish: hsl(248, 70%, 10%);
-
   --orange-500: hsl(7, 88%, 67%);
   --orange-700: hsl(7, 71%, 60%);
   --text-gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
-
   --font-20: 20px;
 }
 
@@ -21,7 +19,7 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   font-family: "Inconsolata", monospace;
   background-color: var(--dark-bluish);
@@ -30,19 +28,19 @@ body {
 
 .container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: url(./assets/images/background-desktop.png);
   background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  padding: 40px 10px;
+  padding: 20px 10px;
 }
 
-.container {
+.container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -53,62 +51,63 @@ body {
   background-repeat: repeat;
   background-size: auto;
   opacity: 0.9;
-  z-index: -1;
+  z-index: 0;
 }
 
 .container .pattern-bottom {
-  position: absolute; /* Alterado de fixed para absolute */
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 400px;
+  height: 200px;
   background-image: url("./assets/images/pattern-squiggly-line-bottom-desktop.svg");
   background-repeat: no-repeat;
   background-position: bottom left;
-  z-index: -1; /* Mantém o padrão atrás do conteúdo */
+  z-index: 0;
   opacity: 1;
 }
 
 .container .pattern-top {
   content: "";
   position: absolute;
-  top: 80px;
+  top: 40px;
   left: 0;
   width: 100%;
-  height: 208px;
+  height: 150px;
   background-image: url("./assets/images/pattern-squiggly-line-top.svg");
   background-repeat: no-repeat;
   background-position: top right;
-  z-index: -1;
+  z-index: 0;
   opacity: 1;
 }
 
 .logo img {
   width: 100%;
+  max-width: 300px;
 }
 
 .conf-form {
   display: flex;
   flex-direction: column;
   text-align: center;
-  top: 0px;
   align-items: center;
-  width: 340px;
-  margin-top: 10px;
+  width: 100%;
+  max-width: 340px;
+  margin-top: 20px;
 }
 
 .form-title {
-  width: 80%;
-  font-size: 27px;
-  margin-bottom: 5px;
+  width: 90%;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .form-description {
-  width: 80%;
+  width: 90%;
   color: var(--grey);
   font-size: 12px;
   line-height: 1.4;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .form-inputs {
@@ -116,7 +115,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .upload-box {
@@ -196,7 +195,7 @@ body {
 .form-inputs h2 {
   font-size: 16px;
   color: var(--grey);
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .form-inputs input {
@@ -223,13 +222,13 @@ body {
   font-family: "Inconsolata", monospace;
   background-color: var(--orange-500);
   color: var(--dark-bluish);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 800;
-  padding: 13px;
+  padding: 10px;
   border: none;
   outline: none;
   border-radius: 10px;
-  margin: 15px 0;
+  margin: 10px 0;
   cursor: pointer;
   transition: all 0.4s;
   z-index: 1;
@@ -239,10 +238,6 @@ body {
   background-color: var(--orange-700);
 }
 
-.warn-red {
-  color: var(--orange-500);
-}
-
 .email-warn {
   display: none;
   font-size: 13px;
@@ -250,15 +245,14 @@ body {
   margin-top: 7px;
 }
 
-/* ticket completed  */
-
 .conf-ticket {
   display: none;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  width: 330px;
-  margin-top: 40px;
+  width: 100%;
+  max-width: 330px;
+  margin-top: 20px;
 }
 
 .ticket-title {
@@ -266,8 +260,8 @@ body {
 }
 
 .ticket-title h1 {
-  font-size: 25px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .ticket-title h1 span {
@@ -279,8 +273,8 @@ body {
 
 .ticket-description {
   color: var(--grey);
-  margin-bottom: 20px;
-  font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
   line-height: 1.4;
 }
 
@@ -294,7 +288,7 @@ body {
   height: auto;
   display: flex;
   align-items: center;
-  margin: 100px;
+  margin: 20px 0;
 }
 
 .bg-card {
@@ -339,7 +333,7 @@ body {
 
 .card-user {
   display: flex;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .card-user img {
@@ -392,38 +386,37 @@ body {
   display: none;
 }
 
-@media (max-width: 330px) {
+@media (max-width: 520px) {
   .container {
-    display: none;
+    padding: 10px;
   }
 
-  .media-query-warning {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 60px;
-    background-color: var(--orange-700);
-    padding: 20px;
-    line-height: 2;
-  }
-}
-
-@media (min-width: 420px) {
-  .conf-form,
-  .conf-ticket {
-    width: 400px;
-  }
-}
-
-@media (min-width: 520px) {
-  .conf-form,
-  .conf-ticket {
-    width: 500px;
+  .logo img {
+    max-width: 250px;
   }
 
-  .card {
-    width: 90%;
-    margin: 150px;
+  .conf-form {
+    margin-top: 10px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .form-description {
+    font-size: 11px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .ticket-title h1 {
+    font-size: 20px;
+  }
+
+  .ticket-description {
+    font-size: 12px;
   }
 }
