@@ -277,7 +277,7 @@ body {
   align-items: center;
 }
 
-
+/* ticket completed */
 .conf-ticket {
   display: none;
   flex-direction: column;
@@ -422,7 +422,7 @@ body {
   font-size: clamp(11px, 3vw, 13px);
 }
 
-
+/* Responsive Design */
 @media (max-width: 480px) {
   .container {
     padding: 15px;
@@ -474,7 +474,7 @@ body {
   }
 }
 
-
+/* Remove the media query warning styles since we've fixed the mobile layout */
 .media-query-warning {
   display: none;
 }
