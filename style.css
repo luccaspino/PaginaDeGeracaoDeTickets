@@ -8,8 +8,6 @@
   --dark-bluish: hsl(248, 70%, 10%);
   --orange-500: hsl(7, 88%, 67%);
   --orange-700: hsl(7, 71%, 60%);
-  --text-gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
-  --font-20: 20px;
 }
 
 * {
@@ -20,7 +18,6 @@
 
 body {
   min-height: 100vh;
-  position: relative;
   font-family: "Inconsolata", monospace;
   background-color: var(--dark-bluish);
   color: var(--white);
@@ -28,19 +25,14 @@ body {
 }
 
 .container {
-  width: 100%;
   min-height: 100vh;
-  background: url(./assets/images/background-desktop.png);
-  background-position: center;
-  background-size: cover;
+  background: url(./assets/images/background-desktop.png) center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 20px;
   position: relative;
-  overflow: hidden;
 }
 
 .container::before {
@@ -50,9 +42,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./assets/images/pattern-lines.svg");
-  background-repeat: repeat;
-  background-size: auto;
+  background: url("./assets/images/pattern-lines.svg") repeat;
   opacity: 0.9;
   z-index: 0;
 }
@@ -63,12 +53,8 @@ body {
   left: 0;
   width: 100%;
   height: 200px;
-  background-image: url("./assets/images/pattern-squiggly-line-bottom-desktop.svg");
-  background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: contain;
+  background: url("./assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat bottom left/contain;
   z-index: 0;
-  opacity: 1;
 }
 
 .container .pattern-top {
@@ -77,12 +63,8 @@ body {
   left: 0;
   width: 100%;
   height: 104px;
-  background-image: url("./assets/images/pattern-squiggly-line-top.svg");
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: contain;
+  background: url("./assets/images/pattern-squiggly-line-top.svg") no-repeat top right/contain;
   z-index: 0;
-  opacity: 1;
 }
 
 .logo {
@@ -98,7 +80,7 @@ body {
   height: auto;
 }
 
-.conf-form {
+.conf-form, .conf-ticket {
   position: relative;
   z-index: 1;
   display: flex;
@@ -110,14 +92,12 @@ body {
   padding: 0 15px;
 }
 
-.form-title {
-  width: 100%;
+.form-title, .ticket-title h1 {
   font-size: clamp(20px, 5vw, 27px);
   margin-bottom: 10px;
 }
 
-.form-description {
-  width: 100%;
+.form-description, .ticket-description {
   color: var(--grey);
   font-size: clamp(11px, 3vw, 12px);
   line-height: 1.4;
@@ -205,7 +185,7 @@ body {
   font-size: clamp(11px, 3vw, 13px);
 }
 
-.upload-warn {
+.upload-warn, .email-warn {
   display: none;
   font-size: clamp(11px, 3vw, 13px);
   color: var(--orange-700);
@@ -265,56 +245,11 @@ body {
   background-color: var(--orange-700);
 }
 
-.warn-red {
-  color: var(--orange-500);
-}
-
-.email-warn {
-  display: none;
-  font-size: clamp(11px, 3vw, 13px);
-  color: var(--orange-700);
-  margin-top: 7px;
-  align-items: center;
-}
-
-/* ticket completed */
-.conf-ticket {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 330px;
-  margin: 20px auto;
-  padding: 0 15px;
-  position: relative;
-  z-index: 1;
-}
-
-.ticket-title {
-  width: 100%;
-}
-
-.ticket-title h1 {
-  font-size: clamp(20px, 5vw, 25px);
-  margin-bottom: 20px;
-}
-
 .ticket-title h1 span {
   background: linear-gradient(to right, #f37362 0%, #ffffff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.ticket-description {
-  color: var(--grey);
-  margin-bottom: 20px;
-  font-size: clamp(14px, 4vw, 16px);
-  line-height: 1.4;
-}
-
-.ticket-description span {
-  color: var(--orange-500);
 }
 
 .card {
@@ -422,7 +357,6 @@ body {
   font-size: clamp(11px, 3vw, 13px);
 }
 
-/* Responsive Design */
 @media (max-width: 480px) {
   .container {
     padding: 15px;
@@ -451,8 +385,7 @@ body {
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  .conf-form,
-  .conf-ticket {
+  .conf-form, .conf-ticket {
     max-width: 400px;
   }
 
@@ -463,8 +396,7 @@ body {
 }
 
 @media (min-width: 769px) {
-  .conf-form,
-  .conf-ticket {
+  .conf-form, .conf-ticket {
     max-width: 500px;
   }
 
@@ -474,7 +406,6 @@ body {
   }
 }
 
-/* Remove the media query warning styles since we've fixed the mobile layout */
 .media-query-warning {
   display: none;
 }
