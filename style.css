@@ -265,7 +265,7 @@ body {
   margin-top: 7px;
 }
 
-/* ticket completed */
+
 .conf-ticket {
   display: none;
   flex-direction: column;
@@ -410,7 +410,7 @@ body {
   display: none;
 }
 
-/* Mobile Optimizations */
+
 @media (max-width: 480px) {
   .container {
     padding: 15px 10px;
