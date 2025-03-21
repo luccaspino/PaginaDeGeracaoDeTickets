@@ -1,18 +1,21 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
+
 :root {
-  --white: #fff;
-  --grey: #d2d1d6;
-  --light-bluish: hsl(245, 15%, 58%);
-  --mid-bluish: hsl(245, 19%, 35%);
-  --dark-bluish: hsl(248, 70%, 10%);
+  --white: #ffffff;
+  --grey: #d2d1d6; 
+  --light-bluish: hsl(245, 15%, 58%); 
+  --mid-bluish: hsl(245, 19%, 35%); 
+  --dark-bluish: hsl(248, 70%, 10%); 
 
-  --orange-500: hsl(7, 88%, 67%);
-  --orange-700: hsl(7, 71%, 60%);
-  --text-gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+  --orange-500: hsl(7, 88%, 67%); 
+  --orange-700: hsl(7, 71%, 60%); 
+  --text-gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%); 
 
-  --font-20: 20px;
+  --font-20: 20px; 
 }
+
 
 * {
   margin: 0;
@@ -20,13 +23,14 @@
   box-sizing: border-box;
 }
 
+
 body {
-  min-height: 100vh;
+  min-height: 100vh; 
   position: relative;
-  font-family: "Inconsolata", monospace;
-  background-color: var(--dark-bluish);
-  color: var(--white);
-  overflow-x: hidden;
+  font-family: "Inconsolata", monospace; 
+  background-color: var(--dark-bluish); 
+  color: var(--white); 
+  overflow-x: hidden; 
 }
 
 .container {
@@ -42,6 +46,7 @@ body {
   overflow: hidden;
 }
 
+
 .container::before {
   content: "";
   position: absolute;
@@ -50,8 +55,9 @@ body {
   width: 100%;
   height: 100%;
   background: url(./assets/images/background-desktop.png) center/cover no-repeat;
-  z-index: -2;
+  z-index: -2; /* Coloca atrás de outros elementos */
 }
+
 
 .container::after {
   content: "";
@@ -63,9 +69,10 @@ body {
   background-image: url("./assets/images/pattern-lines.svg");
   background-repeat: repeat;
   background-size: auto;
-  opacity: 0.9;
-  z-index: -1;
+  opacity: 0.9; 
+  z-index: -1; 
 }
+
 
 .pattern-bottom {
   position: absolute;
@@ -77,8 +84,9 @@ body {
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: contain;
-  z-index: 0;
+  z-index: 0; 
 }
+
 
 .pattern-top {
   position: absolute;
@@ -90,8 +98,9 @@ body {
   background-repeat: no-repeat;
   background-position: top right;
   background-size: contain;
-  z-index: 0;
+  z-index: 0; 
 }
+
 
 .logo img {
   width: 100%;
@@ -99,6 +108,7 @@ body {
   height: auto;
 }
 
+/* Formulário por inteiro*/
 .conf-form {
   position: relative;
   display: flex;
@@ -108,23 +118,26 @@ body {
   width: 100%;
   max-width: 340px;
   margin-top: 10px;
-  z-index: 1;
+  z-index: 1; 
 }
 
+/* Título do formulário */
 .form-title {
   width: 100%;
-  font-size: clamp(20px, 5vw, 27px);
+  font-size: clamp(20px, 5vw, 27px); 
   margin-bottom: 5px;
 }
 
+/* Descrição do formulário */
 .form-description {
   width: 100%;
   color: var(--grey);
-  font-size: clamp(11px, 3vw, 12px);
+  font-size: clamp(11px, 3vw, 12px); 
   line-height: 1.4;
   margin-bottom: 5px;
 }
 
+/* Área de inputs do formulário */
 .form-inputs {
   width: 100%;
   display: flex;
@@ -133,14 +146,15 @@ body {
   margin: 5px 0;
 }
 
+/* Estilo para a área de upload de arquivos */
 .upload-box {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  background-color: #d2d1d61a;
+  background-color: #d2d1d61a; 
   color: var(--grey);
-  backdrop-filter: blur(20px);
-  border: 1px var(--grey) dashed;
+  backdrop-filter: blur(20px); 
+  border: 1px var(--grey) dashed; /* Borda tracejada */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,18 +163,21 @@ body {
   padding: 20px 10px;
 }
 
+/* Estilo quando um arquivo é arrastado sobre a área de upload */
 .drag-over {
-  outline: 2px double var(--orange-500);
+  outline: 2px double var(--orange-500); /* Contorno laranja */
 }
 
+/* Esconde o input de arquivo padrão */
 #file {
   all: unset;
   opacity: 0;
   display: none;
 }
 
+/* Estilo para o botão de upload */
 .upload-btn {
-  background-color: #d2d1d61a;
+  background-color: #d2d1d61a; 
   border-radius: 10px;
   border: 1px solid var(--mid-bluish);
   outline: none;
@@ -170,25 +187,29 @@ body {
   cursor: pointer;
 }
 
+/* Estilo para a imagem dentro do botão de upload */
 .upload-btn img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
 }
 
+/* Texto de instrução para upload */
 .upload-box p {
   font-size: 14px;
   margin-bottom: 20px;
   color: var(--grey);
 }
 
+/* Botões para remover ou alterar a imagem */
 .avatar-btn {
-  display: none;
+  display: none; 
   margin: 10px 0;
 }
 
+/* Estilo para os botões de avatar */
 .avatar-button {
-  background-color: #d2d1d61a;
+  background-color: #d2d1d61a; 
   color: var(--grey);
   border: none;
   outline: none;
@@ -197,47 +218,53 @@ body {
   cursor: pointer;
 }
 
+/* Aviso de erro para arquivos muito grandes */
 .upload-warn {
-  display: none;
+  display: none; 
   font-size: 13px;
-  color: var(--orange-700);
+  color: var(--orange-700); 
   margin-top: 7px;
 }
+
 
 .upload-warn img {
   padding-right: 10px;
 }
 
+/* Títulos dos campos de input */
 .form-inputs h2 {
   font-size: 16px;
   color: var(--grey);
   margin: 15px 0;
 }
 
+/* Estilo para os campos de input */
 .form-inputs input {
   font-family: inherit;
   width: 100%;
   height: 45px;
   border-radius: 10px;
-  background-color: #d2d1d61a;
+  background-color: #d2d1d61a; 
   border: 1px groove var(--grey);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); 
   margin-bottom: 10px;
   color: var(--grey);
   font-size: 15px;
   padding-left: 13px;
 }
 
+/* Estilo para o placeholder dos inputs */
 .form-inputs input::placeholder {
   color: var(--grey);
   font-size: 13px;
 }
 
+/* Estilo para o botão de enviar */
 .submit-btn {
   width: 100%;
   font-family: "Inconsolata", monospace;
-  background-color: var(--orange-500);
-  color: var(--dark-bluish);
+  background-color: var(--orange-500); 
+  color: var(--dark-bluish); 
   font-size: 17px;
   font-weight: 800;
   padding: 13px;
@@ -246,46 +273,51 @@ body {
   border-radius: 10px;
   margin: 15px 0;
   cursor: pointer;
-  transition: all 0.4s;
-  z-index: 1;
+  transition: all 0.4s; 
+  z-index: 1; 
 }
+
 
 .submit-btn:hover {
-  background-color: var(--orange-700);
+  background-color: var(--orange-700); 
 }
 
+/* Classe para avisos */
 .warn-red {
-  color: var(--orange-500);
+  color: var(--orange-500); 
 }
 
+/* Aviso de e-mail inválido */
 .email-warn {
-  display: none;
+  display: none; 
   font-size: 13px;
-  color: var(--orange-700);
+  color: var(--orange-700); 
   margin-top: 7px;
 }
 
-
+/* Estilo para o ticket gerado */
 .conf-ticket {
-  display: none;
+  display: none; 
   flex-direction: column;
   text-align: center;
   align-items: center;
   width: 100%;
   max-width: 330px;
   margin-top: 40px;
-  z-index: 1;
+  z-index: 1; 
 }
 
+/* Título do ticket */
 .ticket-title {
   width: 90%;
 }
 
 .ticket-title h1 {
-  font-size: clamp(20px, 5vw, 25px);
+  font-size: clamp(20px, 5vw, 25px); 
   margin-bottom: 20px;
 }
 
+/* Gradiente de texto no título do ticket */
 .ticket-title h1 span {
   background: #f37362;
   background: linear-gradient(to right, #f37362 0%, #ffffff 100%);
@@ -293,17 +325,20 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Descrição do ticket */
 .ticket-description {
   color: var(--grey);
   margin-bottom: 20px;
-  font-size: clamp(14px, 4vw, 16px);
+  font-size: clamp(14px, 4vw, 16px); 
   line-height: 1.4;
 }
 
+/* Destaque no e-mail na descrição */
 .ticket-description span {
-  color: var(--orange-500);
+  color: var(--orange-500); 
 }
 
+/* Estilo para o cartão do ticket */
 .card {
   position: relative;
   width: 95%;
@@ -313,12 +348,14 @@ body {
   margin: 50px auto;
 }
 
+/* Imagem de fundo do cartão */
 .bg-card {
   position: absolute;
   width: 100%;
   object-fit: cover;
 }
 
+/* Detalhes do cartão */
 .card-details {
   position: relative;
   width: 100%;
@@ -327,6 +364,7 @@ body {
   padding: 20px;
 }
 
+/* Endereço no cartão */
 .card-address {
   display: flex;
   align-items: flex-start;
@@ -337,6 +375,7 @@ body {
   height: auto;
 }
 
+/* Texto do endereço */
 .card-address-text {
   display: flex;
   flex-direction: column;
@@ -345,15 +384,16 @@ body {
 }
 
 .card-address-text h2 {
-  font-size: clamp(14px, 4vw, 16px);
+  font-size: clamp(14px, 4vw, 16px); 
 }
 
 .card-address-text p {
   color: var(--grey);
-  font-size: clamp(10px, 3vw, 12px);
+  font-size: clamp(10px, 3vw, 12px); 
   margin-top: 6px;
 }
 
+/* Informações do usuário no cartão */
 .card-user {
   display: flex;
   margin-top: 30px;
@@ -365,6 +405,7 @@ body {
   border-radius: 10px;
 }
 
+/* Detalhes do usuário */
 .card-user-info {
   display: flex;
   flex-direction: column;
@@ -372,10 +413,11 @@ body {
 }
 
 .card-user-info h2 {
-  font-size: clamp(14px, 4vw, 16px);
+  font-size: clamp(14px, 4vw, 16px); 
   text-align: left;
 }
 
+/* Link do GitHub */
 .card-github-link {
   display: flex;
   align-items: center;
@@ -389,11 +431,12 @@ body {
 
 .card-github-link a {
   color: var(--grey);
-  font-size: clamp(11px, 3vw, 13px);
+  font-size: clamp(11px, 3vw, 13px); 
   transform: translateX(5px);
   text-decoration: none;
 }
 
+/* ID gerado no cartão */
 .card-id {
   position: absolute;
   right: 20px;
@@ -401,16 +444,13 @@ body {
 }
 
 .id-generated {
-  writing-mode: vertical-lr;
+  writing-mode: vertical-lr; /* Texto na vertical */
   color: var(--grey);
-  font-size: clamp(12px, 3vw, 14px);
-}
-
-.media-query-warning {
-  display: none;
+  font-size: clamp(12px, 3vw, 14px); 
 }
 
 
+/* Responsividade para dispositivos móveis */
 @media (max-width: 480px) {
   .container {
     padding: 15px 10px;
@@ -434,19 +474,8 @@ body {
   }
 }
 
-@media (max-width: 330px) {
-  .media-query-warning {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 60px;
-    background-color: var(--orange-700);
-    padding: 20px;
-    line-height: 2;
-  }
-}
 
+/* Ajustes para telas maiores */
 @media (min-width: 420px) {
   .conf-form,
   .conf-ticket {
