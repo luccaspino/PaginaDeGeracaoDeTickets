@@ -127,7 +127,7 @@ function generateTicket() {
                             <div class="card-github-link">
                                 <img src="./assets/images/icon-github.svg" alt="">
                                 <a href="#">${confGithub}</a>
-                         s   </div>
+                           </div>
                         </div>
                     </div>
                     <div class="card-id">
