@@ -84,7 +84,7 @@ const generateBtn = document.querySelector(".submit-btn");
 
 // Função para gerar o ticket
 function generateTicket() {
-  if (userName.value && userEmail.value && imgUser && userGithub) {
+  if (userName.value && userEmail.value && imgUser && userGithub.value) {
     // Verifica se todos os campos obrigatórios foram preenchidos
     let confUser = userName.value;
     let confEmail = userEmail.value;
